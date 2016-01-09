@@ -1,4 +1,4 @@
-## Run Application
+# Student Application
 
 ## Prerequisites
 
@@ -16,6 +16,11 @@ Firefox (latest)
 composer install
 ```
 
+## Start Server (locally)
+```
+PORT=3000 composer start
+```
+
 ## Testing
 
 ```
@@ -24,9 +29,4 @@ composer test
 
 # run php unit tests
 composer test:server
-```
-
-## Run Server (locally)
-```
-PORT=3000 composer start
 ```

@@ -1,9 +1,8 @@
 <?php
 
-use Silex\WebTestCase;
-use Student\Application;
+require_once __DIR__ . '/TestCase.php';
 
-class HealthcheckTest extends WebTestCase {
+class HealthcheckTest extends TestCase {
   public function testAccessible()
   {
     $client = $this->createClient();
@@ -11,13 +10,5 @@ class HealthcheckTest extends WebTestCase {
     $res = $client->getResponse();
     $this->assertTrue($res->isOk());
     $this->assertEquals($res->getContent(), 'pong!');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function createApplication() {
-    $app = new Application;
-    return $app;
   }
 }

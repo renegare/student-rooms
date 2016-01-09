@@ -9,5 +9,11 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "silex/silex": "^1.3",
+        "phpunit/phpunit": "^4.8"
+    },
+    "scripts" : {
+      "test": "phpunit --bootstrap vendor/autoload.php tests/"
+    }
 }

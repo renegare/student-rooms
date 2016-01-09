@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "cavalier": "0.0.1-16",
+    "chai": "^3.4.1",
     "cucumber": "^0.9.2",
     "debug": "^2.2.0",
     "flight": "0.0.2",
@@ -12,11 +13,14 @@
     "gulp-sass": "^2.1.1",
     "jquery": "^2.2.0",
     "testem": "^0.9.11",
+    "webdriverio": "^3.4.0",
     "webpack": "^1.12.10"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:front && npm run test:int",
+    "test:front": "testem",
+    "test:int": "cucumber-js -r tests/features/support -r tests/features/step_definitions tests/features"
   },
   "author": "",
   "license": "MIT"

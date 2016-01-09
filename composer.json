@@ -17,7 +17,8 @@
         "phpunit/phpunit": "^4.8"
     },
     "scripts" : {
-      "test": "phpunit --bootstrap vendor/autoload.php tests/"
+      "test": "phpunit --bootstrap vendor/autoload.php tests/server/",
+      "start": "export PORT=${PORT:=3000} && php -S 0.0.0.0:$PORT -t ./public"
     },
     "require-dev": {
         "symfony/browser-kit": "^3.0"

@@ -17,7 +17,10 @@
         "phpunit/phpunit": "^4.8"
     },
     "scripts" : {
-      "test": "phpunit --bootstrap vendor/autoload.php tests/server/",
+      "post-install-cmd": "npm i",
+      "test": "composer test:server && composer test:int",
+      "test:server": "phpunit --bootstrap vendor/autoload.php tests/server/",
+      "test:int": "npm run test:int",
       "start": "export PORT=${PORT:=3000} && php -S 0.0.0.0:$PORT -t ./public"
     },
     "require-dev": {

@@ -1,0 +1,13 @@
+{
+    "name": "mrmoo/student-rooms",
+    "description": "student rooms and all that jazz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mudi Ugbowanko",
+            "email": "mudi@renegare.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

@@ -15,5 +15,8 @@
     },
     "scripts" : {
       "test": "phpunit --bootstrap vendor/autoload.php tests/"
+    },
+    "require-dev": {
+        "symfony/browser-kit": "^3.0"
     }
 }

@@ -1,4 +1,5 @@
 var Adapter = require('../util/adapter')
+var debug = require('debug')('student:world')
 
 function World () {
   this.adapter = new Adapter({

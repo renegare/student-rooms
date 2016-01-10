@@ -4,6 +4,7 @@ var expect = require('chai').expect
 var PropertyPage = require('../page/property')
 var debug = require('debug')('student:step')
 var co = require('bluebird').coroutine
+var protoScrape = require('../util/proto-scrape')
 
 module.exports = function () {
   this.When(/^I visit "([^"]*)"$/, function (url) {
@@ -26,7 +27,7 @@ module.exports = function () {
     return co(function * () {
       var property = yield this.page.propertyData
       debug('display property information', property)
-      return this.debug
+      yield expect(property).to.eql(yield protoScrape(url))
     }.bind(this))()
   })
 

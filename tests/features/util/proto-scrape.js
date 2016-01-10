@@ -25,42 +25,41 @@ module.exports = function (url) {
       var data = {
         name: $page.find('h1.large-header').text().trim(),
         address: $page.find('*[itemprop=address]').text().trim(),
-        images: $page.find('#gallery li')
-          .map((i, e) => {
-            return urlFormat({
-              protocol: resource.protocol,
-              host: resource.host,
-              pathname: $(e).css('background-image').replace(/url\(([^\)]+)\)/, '$1')
-            })
-          }).toArray(),
-        description: $page.find('section.intro_panel .contained-content')
-            .find('p, .expand-target div')
-            .map((i, e) => $(e).html().trim())
-            .toArray()
-            .join("\n\n"),
-        roomtTypes: $page.find('.rooms__list .tabs__menu__item')
-          .map((i,e) => {
-            var $e = $(e)
-            return {
-              name: $e.find('.tabs__menu__btn').text().trim(),
-              description: $e.find('.bottom__panel__details').html().trim(),
-              images: $e.find('.gallery li').map((i, e) => {
-                  return urlFormat({
-                    protocol: resource.protocol,
-                    host: resource.host,
-                    pathname: $(e).css('background-image').replace(/url\(([^\)]+)\)/, '$1')
-                  })
-                }).toArray()
-            }
-          }).toArray(),
-        facilities: $page.find('.features .features__feature')
-          .map((i, e) => {
-            return {
-              name: $(e).find('h3').text().trim(),
-              description: $(e).find('p').text().trim()
-            }
-          }).toArray()
-
+        // images: $page.find('#gallery li')
+        //   .map((i, e) => {
+        //     return urlFormat({
+        //       protocol: resource.protocol,
+        //       host: resource.host,
+        //       pathname: $(e).css('background-image').replace(/url\(([^\)]+)\)/, '$1')
+        //     })
+        //   }).toArray(),
+        // description: $page.find('section.intro_panel .contained-content')
+        //     .find('p, .expand-target div')
+        //     .map((i, e) => $(e).html().trim())
+        //     .toArray()
+        //     .join("\n\n"),
+        // roomtTypes: $page.find('.rooms__list .tabs__menu__item')
+        //   .map((i,e) => {
+        //     var $e = $(e)
+        //     return {
+        //       name: $e.find('.tabs__menu__btn').text().trim(),
+        //       description: $e.find('.bottom__panel__details').html().trim(),
+        //       images: $e.find('.gallery li').map((i, e) => {
+        //           return urlFormat({
+        //             protocol: resource.protocol,
+        //             host: resource.host,
+        //             pathname: $(e).css('background-image').replace(/url\(([^\)]+)\)/, '$1')
+        //           })
+        //         }).toArray()
+        //     }
+        //   }).toArray(),
+        // facilities: $page.find('.features .features__feature')
+        //   .map((i, e) => {
+        //     return {
+        //       name: $(e).find('h3').text().trim(),
+        //       description: $(e).find('p').text().trim()
+        //     }
+        //   }).toArray()
       }
       debug('expected data', data)
       return data

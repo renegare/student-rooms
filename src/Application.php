@@ -21,7 +21,10 @@ class Application extends App {
     });
 
     $this->get('/', function () {
-      return $this['twig']->render('property.twig');
+      return $this['twig']->render('property.twig', [
+        'name' => 'Larch House',
+        'address' => 'Cambridge Court, L7 7EE'
+      ]);
     });
   }
 }

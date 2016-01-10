@@ -46,10 +46,10 @@ class Property extends Base {
       return {
         name: name,
         address: address,
-        images: images,
-        description: description,
-        roomTypes: roomTypes,
-        facilities: facilities
+        // images: images,
+        // description: description,
+        // roomTypes: roomTypes,
+        // facilities: facilities
       }
     })
   }

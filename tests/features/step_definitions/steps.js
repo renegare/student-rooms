@@ -27,7 +27,7 @@ module.exports = function () {
     return co(function * () {
       var property = yield this.page.propertyData
       debug('display property information', property)
-      yield expect(property).to.eql(yield protoScrape(url))
+      expect(property).to.eql(yield protoScrape(url))
     }.bind(this))()
   })
 

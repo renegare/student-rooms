@@ -3,12 +3,38 @@
   <nav id="main">Main Menu</nav>
   <div id="property-name">{{name}}</div>
   <div id="address">{{address}}</div>
-  <div id="image">Image</div>
-  <div id="description">Description</div>
+  <div id="gallery">
+    {% for image in images %}
+      <img src="{{image}}" />
+    {% endfor %}
+  </div>
+  <div id="description">
+    {% for p in description %}
+      <p>{{p}}</p>
+    {% endfor %}
+  </div>
   <div id="ratings">Ratings</div>
   <div id="contact">Contact</div>
   <div id="room-quantity">Room Quantity</div>
-  <div id="room-types">Room Types</div>
-  <div id="facilities">Facilities</div>
+  <div id="room-types">
+    {% for room in roomTypes %}
+      <div class="type">
+        <h3 class="name">{{room.name}} <span>{{room.price}}</span></h3>
+        <div class="description">
+          {% for p in room.description %}
+            <p>{{p}}</p>
+          {% endfor %}
+        </div>
+        {% for image in room.images %}
+          <img src="{{image}}" />
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+  <ul id="facilities">
+    {% for f in facilities %}
+      <li class="facility">{{f.name}}</li>
+    {% endfor %}
+  </ul>
 </body>
 </html>

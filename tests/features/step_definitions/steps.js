@@ -26,7 +26,6 @@ module.exports = function () {
   this.Then(/^displayed info should match top listed property on "([^"]*)"$/, function (url) {
     return co(function * () {
       var property = yield this.page.propertyData
-      debug('display property information', property)
       expect(property).to.eql(yield protoScrape(url))
     }.bind(this))()
   })

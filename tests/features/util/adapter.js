@@ -40,6 +40,14 @@ class Adapter extends WebdriverIOAdapter {
         return this.driver.elementIdText(e.ELEMENT).then(res => res.value)
       })
   }
+
+  attr (e, attr) {
+    debug('attribute src', stringify(e))
+    return this.find(e)
+      .then(e => {
+        return this.driver.elementIdAttribute(e.ELEMENT, attr).then(res => res.value)
+      })
+  }
 }
 
 module.exports = Adapter
